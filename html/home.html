@@ -1,0 +1,109 @@
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0.">
+        <link rel="stylesheet" href="../css/home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <title>SMKN 24 JAKARTA</title>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="plant">SMKN 24 JAKARTA</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="home.html">Home</a>
+                    <a href="#">Profil</a>
+                    <a href="#">Kesiswaan</a>
+                    <a href="#">Sarpras</a>
+                    <a href="#">Hubin</a>
+                    <a href="#">Kurikulum</a>
+                    <a href="#">Info</a>
+                </div>
+            </div>
+        </header>
+        <section class="home">
+            <video class="video-slide active" src="../img/rs1.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="../img/rs1.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="../img/rs1.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="../img/rs1.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="../img/rs1.mp4" autoplay muted loop></video>
+            <div class="content active">
+                <h1>Selamat<br><span>Datang</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Selamat<br><span>Datang</span></h1>
+                <p>Where Care Meets Compassion.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Selamat<br><span>Datang</span></h1>
+                <p>Empowering Lives through Healthcare Excellence.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Selamat<br><span>Datang</span></h1>
+                <p>Bridging Hope and Health Together.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="content">
+                <h1>Selamat<br><span>Datang</span></h1>
+                <p>Nurturing Health at Every Step.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+
+        <script language="javascript">
+            //Javascript untuk responsive nav menu
+            const menuBtn = document.querySelector(".menu-btn");
+            const nav = document.querySelector(".navigation");
+            menuBtn.addEventListener("click", () => {
+                menuBtn.classList.toggle("active");
+                nav.classList.toggle("active");
+            });
+
+            //javascript untuk vid slide nav
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content");
+
+            var sliderNav = function(manual) {
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                });
+                
+                btns[manual].classList.add("active");
+                slides[manual].classList.add("active");
+                contents[manual].classList.add("active");
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    sliderNav(i);
+                });
+            });
+        </script>
+    </body>
+</html>
